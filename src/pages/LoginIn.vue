@@ -1,6 +1,8 @@
 <template>
-  <div class="login-in">
-    <yin-login-logo></yin-login-logo>
+  <div class="login-in" >
+    <video id="v1" autoplay loop muted style="width: 100%">
+      <source src="../../static/bg.mp4" type="video/mp4"  />
+    </video>
     <div class="login">
       <div class="login-head">
         <span>帐号登录</span>

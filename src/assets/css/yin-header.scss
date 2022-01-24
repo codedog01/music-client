@@ -8,11 +8,12 @@
   height: $header-height;
   line-height: $header-height;
   padding: $header-padding;
-  margin: $header-margin;
-  background-color: $theme-header-color;
+  margin: 0 auto;
+  //background-color: $theme-header-color;
   @include box-shadow($box-shadow);
   box-sizing: border-box;
   z-index: 100;
+  background-color: #242424;
 }
 
 .header-logo {
@@ -21,11 +22,18 @@
   font-weight: bold;
   white-space: nowrap;
   cursor: pointer;
+  color: white;
+  transition-duration: .5s;
+  background-color: #242424;
 
   .icon {
     @include icon(($header-height / 3) * 2, $color-black);
     vertical-align: middle;
   }
+}
+
+.header-logo:hover {
+  color: #EC4141;
 }
 
 /*nav*/
@@ -34,14 +42,21 @@
   white-space: nowrap;
 
   li {
+    transition-duration: .5s;
     margin: $header-nav-margin;
     padding: $header-nav-padding;
     font-size: $font-size-header;
-    color: $color-grey;
+    color: white;
     text-align: center;
     border-bottom: none;
     box-sizing: border-box;
     cursor: pointer;
+  }
+
+  li:hover {
+    background-color: rgba(0 ,0 ,0 ,.8 );
+    //color: #EC4141;
+    transition-duration: 1s;
   }
 }
 
@@ -146,6 +161,7 @@
 }
 
 .active {
-  color: $theme-color !important;
-  border-bottom: 5px solid $theme-color !important;
+  color: #EC4141 !important;
+
+  border-bottom: 1px solid  #EC4141 !important;
 }

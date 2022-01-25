@@ -2,7 +2,7 @@
 @import "global.scss";
 
 .yin-header {
-  position: fixed;
+  position: absolute;
   @include layout;
   width: 100%;
   height: $header-height;

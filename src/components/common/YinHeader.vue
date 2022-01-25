@@ -10,7 +10,7 @@
         {{item.name}}
       </li>
       <li>
-        <div class="header-search"  >
+        <div class="header-search">
           <input style="padding: 0;margin: 0" type="text" placeholder="搜索音乐" @keyup.enter="goSearch()"
                  v-model="keywords"/>
           <div class="search-btn" @click="goSearch()">
@@ -27,7 +27,7 @@
     <!--设置-->
     <div class="header-right" v-show="loginIn">
       <div id="user" ref="user">
-        <img :src="attachImageUrl(avator)" alt="">
+                <img :src='attachImageUrl(avator)' alt="头像">
       </div>
       <ul class="menu" ref="menu" :class="showMenu ? 'show' : ''">
         <li v-for="(item, index) in menuList" :key="index" @click="goMenuList(item.path)">{{item.name}}</li>

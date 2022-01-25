@@ -1,6 +1,8 @@
 <template>
 <div>
-  <yin-login-logo></yin-login-logo>
+  <video id="v1" autoplay loop muted style="width: 100%;height: 100%">
+    <source src="../../static/bg.mp4" type="video/mp4"  />
+  </video>
   <div class="sign-up">
     <div class="sign-up-head">
       <span>用户注册</span>
@@ -30,11 +32,11 @@
       <el-form-item prop="introduction" label="签名">
         <el-input  type="textarea" placeholder="签名" v-model="registerForm.introduction" ></el-input>
       </el-form-item>
-      <el-form-item prop="location" label="地区">
-        <el-select v-model="registerForm.location" placeholder="地区" style="width:100%">
-          <el-option v-for="item in cities" :key="item.value" :label="item.label" :value="item.value"></el-option>
-        </el-select>
-      </el-form-item>
+<!--      <el-form-item prop="location" label="地区">-->
+<!--        <el-select v-model="registerForm.location" placeholder="地区" style="width:100%">-->
+<!--          <el-option v-for="item in cities" :key="item.value" :label="item.label" :value="item.value"></el-option>-->
+<!--        </el-select>-->
+<!--      </el-form-item>-->
       <div class="sign-up-btn">
         <el-button @click="goback">取消</el-button>
         <el-button type="primary" @click="handleSignUp">确定</el-button>
@@ -76,14 +78,15 @@ export default {
     handleSignUp () {
       const params = new URLSearchParams()
       params.append('password', this.registerForm.password)
+      params.append('username', this.registerForm.username)
       params.append('sex', this.registerForm.sex)
       params.append('phone_num', this.registerForm.phoneNum)
       params.append('email', this.registerForm.email)
       params.append('birth', this.getDateTime())
       params.append('introduction', this.registerForm.introduction)
       params.append('location', this.registerForm.location)
-      params.append('avator', '/img/user.jpg')
-      HttpManager.handleSignUp(params)
+      // params.append('avator', '/img/DEFAULT_USER_AVATAR_2022125.jpg')
+      HttpManager.SignUp(params)
         .then(res => {
           if (res.code === 1) {
             this.$notify({

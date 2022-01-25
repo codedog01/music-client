@@ -15,7 +15,11 @@ const mixin = {
     },
     // 获取图片信息
     attachImageUrl(srcUrl) {
-      return srcUrl ? this.$store.state.configure.HOST + srcUrl || '../assets/img/user.jpg' : ''
+      const image = new Image(srcUrl);
+      const bool = image.width !== 0 && image.length !== 0
+      console.log(srcUrl)
+
+      return srcUrl ? this.$store.state.configure.HOST + srcUrl : 'static/img/DEFAULT_USER_AVATAR_2022125.jpg'
     },
     attachBirth(val) {
       let birth = String(val).match(/[0-9-]+(?=\s)/)

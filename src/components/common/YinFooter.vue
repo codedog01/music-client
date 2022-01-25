@@ -1,9 +1,9 @@
 <template>
-  <div class="the-footer">
-    <p v-for="(item, index) in footerList" :key="index">
-      {{item}}
-    </p>
-  </div>
+<!--  <div class="the-footer">-->
+<!--    <p v-for="(item, index) in footerList" :key="index">-->
+<!--      {{item}}-->
+<!--    </p>-->
+<!--  </div>-->
 </template>
 
 <script>

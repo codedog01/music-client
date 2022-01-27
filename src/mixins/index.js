@@ -19,7 +19,7 @@ const mixin = {
       const bool = image.width !== 0 && image.length !== 0
       console.log(srcUrl)
 
-      return srcUrl ? this.$store.state.configure.HOST + srcUrl : 'static/img/DEFAULT_USER_AVATAR_2022125.jpg'
+      return srcUrl ? "http://cloudleng.oss-cn-beijing.aliyuncs.com/music-server"+ srcUrl : 'static/img/DEFAULT_USER_AVATAR_2022125.jpg'
     },
     attachBirth(val) {
       let birth = String(val).match(/[0-9-]+(?=\s)/)
